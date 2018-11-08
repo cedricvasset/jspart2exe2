@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Exercice 2</title>
+</head>
+<body>
+  <form>
+    <!--onblur (a la perte de focus) appeler la fonction dialbox-->
+    <label for="lastname">Votre nom  : </label><input  onblur="dialbox()" type="text" name="lastname" id="lastname" />
+  </form>
+  <script type="text/javascript">
+
+  function dialbox(){
+    var name = document.getElementById('lastname').value;
+    // attention a la variable regex,vérifier sur regex101(plus sur).toujours ajouter ^ et $.
+    var regexdial = /^[a-zA-Z-]+$/;
+    if (regexdial.test(name)==true){
+      alert('Merci de votre participation '+ name)
+    }else{
+      alert('me prend pas pour une quiche!!!!')
+    }
+  }
+  </script>
+</body>
+</html>
